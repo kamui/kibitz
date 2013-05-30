@@ -25,4 +25,8 @@ if File.exist?(airbrake_config_file)
 end
 
 class Kibitz < Sinatra::Base
+  # enable sinatra config_file middleware
+  require "sinatra/config_file"
+  register Sinatra::ConfigFile
+  config_file "#{WDSinatra::AppLoader.root_path}/config/config.yml.erb"
 end

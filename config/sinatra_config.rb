@@ -4,9 +4,12 @@ class Kibitz < Sinatra::Base
   set :app_file, __FILE__
   set :public_folder, File.join(WDSinatra::AppLoader.root_path, "public")
   set :method_override, true
+  set :environments, %w{development test production staging}
+  set :static_cache_control, [:public, max_age: 31536000]
+  # set :show_exceptions, false
 
   # enable logging in certain environments
-  configure :development, :production do
+  configure :production, :staging, :development do
     enable :logging
   end
 
@@ -37,6 +40,9 @@ class Kibitz < Sinatra::Base
 
   require "rack/parser"
   use Rack::Parser
+
+  require "sinatra/link_header"
+  helpers Sinatra::LinkHeader
 
   if defined?(NewRelic)
     #if RACK_ENV == 'development'

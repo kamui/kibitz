@@ -7,6 +7,7 @@ gem "activesupport"
 gem "backports", ">= 2.3.0", :platforms => "ruby_18"
 gem "json", :platforms => "ruby_18"
 gem "pry"
+gem "sinatra-contrib", "~> 1.4.0", require: false
 
 group :development, :test do
   gem "rack-test", ">= 0.6.1"
