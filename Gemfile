@@ -6,6 +6,7 @@ gem "activesupport"
 
 gem "backports", ">= 2.3.0", :platforms => "ruby_18"
 gem "json", :platforms => "ruby_18"
+gem "pry"
 
 group :development, :test do
   gem "rack-test", ">= 0.6.1"

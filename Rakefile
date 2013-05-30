@@ -29,6 +29,11 @@ task :setup_app do
   end
 end
 
+task :console => :setup_app do
+  require 'pry'
+  Pry.start
+end
+
 task :environment do
   ENV['DONT_CONNECT'] = nil
   WDSinatra::AppLoader.setup(root)

@@ -4,6 +4,7 @@
 # Here you want to load your dependencies and maybe set your
 # datastore.
 
+require 'pry'
 
 ############### AIRBRAKE ###############
 airbrake_config_file = File.join(WDSinatra::AppLoader.root_path, 'config', 'airbrake.yml')
