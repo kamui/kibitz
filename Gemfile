@@ -7,6 +7,11 @@ gem "activesupport"
 gem "backports", ">= 2.3.0", :platforms => "ruby_18"
 gem "json", :platforms => "ruby_18"
 gem "pry"
+gem "rake"
+gem "pg"
+gem "sequel"
+gem "sequel_pg", require: "sequel"
+gem "wd_sinatra_sequel"
 
 group :development, :test do
   gem "rack-test", ">= 0.6.1"

@@ -24,5 +24,11 @@ if File.exist?(airbrake_config_file)
   end
 end
 
+
+############### SEQUEL ###############
+require 'wd_sinatra_sequel'
+WdSinatraSequel::DBConnector.set_db_connection
+WdSinatraSequel::DBConnector.connect_to_db
+
 class Kibitz < Sinatra::Base
 end

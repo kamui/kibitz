@@ -1,0 +1,18 @@
+development: &default
+  uri:                      postgres://postgres@localhost/kibitz_development
+  max_connections:          10
+
+test:
+  <<: *default
+  uri:                      postgres://postgres@localhost/kibitz_test
+  max_connections:          10
+
+staging:
+  <<: *default
+  uri:                      <%= ENV['DATABASE_URL'] %>
+  max_connections:          <%= ENV['DATABASE_MAX_CONNECTIONS'] %>
+
+production:
+  <<: *default
+  uri:                      <%= ENV['DATABASE_URL'] %>
+  max_connections:          <%= ENV['DATABASE_MAX_CONNECTIONS'] %>
