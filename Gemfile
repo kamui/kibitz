@@ -1,0 +1,26 @@
+source "https://rubygems.org"
+
+gem "wd_sinatra"
+gem "activesupport"
+# gem "wd_newrelic_rpm", :require => "newrelic_rpm"
+
+gem "backports", ">= 2.3.0", :platforms => "ruby_18"
+gem "json", :platforms => "ruby_18"
+
+group :development, :test do
+  gem "rack-test", ">= 0.6.1"
+  # gem "foreman"
+  # gem "puma"
+  gem "minitest", "~> 4.7.4"
+  # gem "guard-minitest"
+  gem "rake"
+
+  gem "rerun"
+  # You can optionally comment out libraries not matching your OS platform
+  # Even if you don't, only the gem supported by your OS will be used by rerun
+  gem "rb-fsevent", ">= 0.9.3" # Mac OS X
+  gem "rb-inotify", ">= 0.9" # Linux
+  gem "rb-kqueue", ">= 0.2" # FreeBSD, NetBSD, OpenBSD, and Darwin
+  require "rbconfig"
+  gem "wdm", ">= 0.1.0" if RbConfig::CONFIG["target_os"] =~ /mswin|mingw/i # Windows
+end
